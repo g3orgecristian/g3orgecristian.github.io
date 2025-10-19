@@ -1,163 +1,248 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>g3orgecristian</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>g3orgecristian</title>
+  <link rel="icon" type="image/png" href="https://g3orgecristian.github.io/assets/media/logo-g3orgecristian.png">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://example.com/favicon.png">
+  <style>
+    :root{
+      --bg-1: #0f1113;
+      --bg-2: #16171a;
+      --accent: #7289DA;
+      --accent-2: #9aa9ff;
+      --glass-alpha: 0.12;
+      --glass-border: rgba(255,255,255,0.06);
+      --card-radius: 14px;
+      --text: #e8eef8;
+      --muted: #93a0b4;
+      --shadow: 0 8px 30px rgba(2,6,23,0.6);
+      --glass-blur: 10px;
+    }
 
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #abe5a4; /* fundal principal */
-            color: #2E2E2E; /* text închis pentru contrast */
-            margin: 0;
-            padding: 0;
-        }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:
+        radial-gradient(1200px 600px at 10% 10%, rgba(114,137,218,0.06), transparent 10%),
+        radial-gradient(800px 400px at 90% 90%, rgba(154,169,255,0.04), transparent 10%),
+        linear-gradient(180deg, var(--bg-1), var(--bg-2));
+      color: var(--text);
+      padding:48px 24px;
+      min-height:100vh;
 
-        header {
-            background-color: #6cbf84; /* verde mai închis pentru header */
-            padding: 2rem;
-            text-align: center;
-            border-bottom: 4px solid #4a9e6a; /* accent verde închis */
-            border-radius: 0 0 10px 10px;
-            color: #fff;
-        }
+      display: flex;
+      flex-direction: column; /* vertical layout */
+      align-items: center;
+    }
 
-        header h1 {
-            margin: 0;
-            color: #ffffff;
-        }
+    .page{
+      width:100%;
+      max-width:1200px;
+      display:flex;
+      gap:24px;
+      align-items:flex-start;
+    }
 
-        header p {
-            margin: 0.5rem 0 0 0;
-            color: #e6f0e9;
-        }
+    main{
+      flex:2;
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
 
-        .container {
-            display: flex;
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-            gap: 2rem;
-        }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,var(--glass-alpha)), rgba(255,255,255,0.02));
+      border: 1px solid var(--glass-border);
+      border-radius: var(--card-radius);
+      padding:20px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(var(--glass-blur));
+      -webkit-backdrop-filter: blur(var(--glass-blur));
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
 
-        main {
-            flex: 2;
-        }
+    .card:hover{
+      transform: translateY(-6px);
+      box-shadow: 0 18px 50px rgba(2,6,23,0.7);
+    }
 
-        .post {
-            background-color: #ffffff; /* postări albe pentru contrast */
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            color: #2E2E2E;
-        }
+    header.card{
+      text-align:center;
+      padding:28px;
+      margin-bottom:18px;
+    }
 
-        .post h2 {
-            color: #4a9e6a; /* titlurile postărilor în verde închis */
-            margin-top: 0;
-        }
+    header.card img{
+      width:48px;
+      height:48px;
+      border-radius:8px;
+      margin-bottom:12px;
+    }
 
-        .post p {
-            margin: 0.5rem 0;
-        }
+    header.card h1{
+      margin:0;
+      font-size:clamp(1.6rem,2.4vw,2.6rem);
+      background: linear-gradient(90deg, var(--accent), var(--accent-2), #7bd1ff, var(--accent));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
 
-        .post .date {
-            font-size: 0.9rem;
-            color: #777777;
-        }
+    header.card p{
+      color: var(--muted);
+      margin-top:8px;
+      font-size:0.96rem;
+    }
 
-        aside.sidebar {
-            flex: 1;
-            background-color: #f0fff4; /* ușor verde deschis */
-            padding: 1rem;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            height: fit-content;
-        }
+    .showcase-title{
+      font-weight:700;
+      color:var(--accent);
+      margin-bottom:8px;
+      font-size:1.1rem;
+    }
 
-        aside.sidebar h3 {
-            color: #4a9e6a;
-            margin-top: 0;
-        }
+    .showcase-desc{
+      font-size:0.95rem;
+      color:var(--text);
+      margin-bottom:12px;
+    }
 
-        aside.sidebar ul {
-            list-style: none;
-            padding: 0;
-        }
+    .showcase-link{
+      display:inline-block;
+      margin-top:6px;
+      padding:8px 12px;
+      border-radius:10px;
+      background: linear-gradient(90deg, rgba(114,137,218,0.98), rgba(154,169,255,0.95));
+      color: var(--bg-1);
+      text-decoration:none;
+      font-weight:700;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
 
-        aside.sidebar ul li {
-            margin: 0.5rem 0;
-        }
+    .showcase-link:hover{
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 18px 50px rgba(114,137,218,0.18), 0 6px 20px rgba(2,6,23,0.45);
+    }
 
-        aside.sidebar ul li a {
-            color: #2E2E2E;
-            text-decoration: none;
-        }
+    .projects-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap:16px;
+    }
 
-        aside.sidebar ul li a:hover {
-            color: #4a9e6a;
-        }
+    aside.sidebar{
+      flex:1;
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+      position:sticky;
+      top:48px;
+      height:fit-content;
+    }
 
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background-color: #6cbf84; /* același verde ca header */
-            color: #fff;
-            margin-top: 2rem;
-            border-radius: 10px 10px 0 0;
-        }
+    aside h3{
+      text-align:center;
+      color:var(--accent);
+      margin-bottom:12px;
+    }
 
-        /* Mobile responsiveness */
-        @media (max-width: 1000px) {
-            .container {
-                flex-direction: column;
-            }
-        }
-    </style>
+    aside ul{
+      list-style:none;
+      padding:0;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+
+    aside ul li a{
+      color:var(--text);
+      text-decoration:none;
+      padding:6px 8px;
+      border-radius:8px;
+      transition: background 0.18s, color 0.18s;
+    }
+
+    aside ul li a:hover{
+      background: rgba(114,137,218,0.15);
+      color: var(--accent);
+    }
+
+    footer{
+      margin-top:24px;
+      text-align:center;
+      color:var(--muted);
+      font-size:0.92rem;
+    }
+
+    @media(max-width:1000px){
+      .page{ flex-direction:column; }
+    }
+  </style>
 </head>
 <body>
 
-    <header>
+  <div class="page">
+    <main>
+      <!-- Header -->
+      <header class="card">
         <h1>g3orgecristian</h1>
         <p>Idei, proiecte și tot ce îmi place să împărtășesc!</p>
-    </header>
+      </header>
 
-    <div class="container">
-        <main>
-            <div class="post">
-                <h2>Botul de discord UtilityBot</h2>
-                <p class="date">19 Octombrie 2025</p>
-                <p>Am creat un bot numit Utility Bot, care poate modera serverul, da quote-uri și face zaruri. Este scris în Python folosind discord.py.</p>
-                <p>Daca vrei sa aflii mai multe acceseaza linkul de mai jos.</p>
-                <a href="https://g3orgecristian.github.io/utilitybot">https://g3orgecristian.github.io/utilitybot</a>
-            </div>
+      <!-- Showcase Item 1 -->
+      <section class="card">
+        <div class="showcase-title">Botul de Discord UtilityBot</div>
+        <div class="showcase-desc">Am creat un bot numit Utility Bot, care poate modera serverul, da quote-uri și face zaruri. Este scris în Python folosind discord.py.</div>
+        <a class="showcase-link" href="https://g3orgecristian.github.io/utilitybot" target="_blank">Vezi proiectul</a>
+      </section>
 
-            <div class="post">
-                <h2>Despre Mine</h2>
-                <p class="date">18 Octombrie 2025</p>
-                <p>Numele meu este George Cristian si am 19 ani (15.01.2006).</p>
-                <p>Sunt o persoana simpla care ii place sa faca proiecte interesante si sa ma distrez cu ceilalti.</p>
-            </div>
+      <!-- Showcase Item 2 -->
+      <section class="card">
+        <div class="showcase-title">Despre Mine</div>
+        <div class="showcase-desc">Numele meu este George Cristian și am 19 ani (15.01.2006). Sunt o persoană simplă care îi place să facă proiecte interesante și să mă distrez cu ceilalți.</div>
+      </section>
 
-        </main>
+      <!-- Categorie mare: Proiecte -->
+      <section class="card">
+        <div class="showcase-title">Proiecte</div>
+        <div class="projects-grid">
+          <div class="card">
+            <div class="showcase-title">Utility Bot</div>
+            <div class="showcase-desc">Bot Discord cu comenzi utile, moderație și distracție. Scris în Python folosind discord.py.</div>
+            <a class="showcase-link" href="https://g3orgecristian.github.io/utilitybot/" target="_blank">Vezi proiectul</a>
+          </div>
 
-        <aside class="sidebar">
-            <h3>Link-uri utile</h3>
-            <ul>
-                <li><a href="https://g3orgecristian.github.io/proiecte">Proiecte</a></li>
-                <li><a href="https://g3orgecristian.github.io/contact">Contact</a></li>
-            </ul>
-        </aside>
-    </div>
+          <div class="card">
+            <div class="showcase-title">Website personal</div>
+            <div class="showcase-desc">Un site în stil blog pentru a împărtăși proiecte, gânduri și multe altele.</div>
+            <a class="showcase-link" href="https://g3orgecristian.github.io/" target="_blank">Vezi proiectul</a>
+          </div>
 
-    <footer>
-        g3orgecristian.github.io | Discord: g3orgecristian / G3ORGE#6664
-    </footer>
+          <!-- Poți adăuga mai multe proiecte aici -->
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="card">
+        <h3>Link-uri utile</h3>
+        <ul>
+          <li><a href="https://g3orgecristian.github.io/contact">Contact</a></li>
+          <li><a href="https://github.com/g3orgecristian">GitHub</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    g3orgecristian.github.io | Discord: g3orgecristian / G3ORGE#6664
+  </footer>
 
 </body>
 </html>
