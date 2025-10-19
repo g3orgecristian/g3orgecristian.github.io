@@ -1,82 +1,163 @@
 <!DOCTYPE html>
 <html lang="ro">
-<!--    ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-─██████████████─██████████████────██████████████─██████████─██████████████████─████████████───██████████████────██████──────────██████─██████████████─██████████████─██████████─██████████─
-─██░░░░░░░░░░██─██░░░░░░░░░░██────██░░░░░░░░░░██─██░░░░░░██─██░░░░░░░░░░░░░░██─██░░░░░░░░████─██░░░░░░░░░░██────██░░██████████████░░██─██░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░░░██─██░░░░░░██─
-─██░░██████████─██░░██████████────██░░██████░░██─████░░████─████████████░░░░██─██░░████░░░░██─██░░██████░░██────██░░░░░░░░░░░░░░░░░░██─██░░██████░░██─██████░░██████─████░░████─████░░████─
-─██░░██─────────██░░██────────────██░░██──██░░██───██░░██───────────████░░████─██░░██──██░░██─██░░██──██░░██────██░░██████░░██████░░██─██░░██──██░░██─────██░░██───────██░░██─────██░░██───
-─██░░██─────────██░░██████████────██░░██████░░██───██░░██─────────████░░████───██░░██──██░░██─██░░██████░░██────██░░██──██░░██──██░░██─██░░██████░░██─────██░░██───────██░░██─────██░░██───
-─██░░██─────────██░░░░░░░░░░██────██░░░░░░░░░░██───██░░██───────████░░████─────██░░██──██░░██─██░░░░░░░░░░██────██░░██──██░░██──██░░██─██░░░░░░░░░░██─────██░░██───────██░░██─────██░░██───
-─██░░██─────────██░░██████████────██░░██████████───██░░██─────████░░████───────██░░██──██░░██─██░░██████░░██────██░░██──██████──██░░██─██░░██████░░██─────██░░██───────██░░██─────██░░██───
-─██░░██─────────██░░██────────────██░░██───────────██░░██───████░░████─────────██░░██──██░░██─██░░██──██░░██────██░░██──────────██░░██─██░░██──██░░██─────██░░██───────██░░██─────██░░██───
-─██░░██████████─██░░██████████────██░░██─────────████░░████─██░░░░████████████─██░░████░░░░██─██░░██──██░░██────██░░██──────────██░░██─██░░██──██░░██─────██░░██─────████░░████─████░░████─
-─██░░░░░░░░░░██─██░░░░░░░░░░██────██░░██─────────██░░░░░░██─██░░░░░░░░░░░░░░██─██░░░░░░░░████─██░░██──██░░██────██░░██──────────██░░██─██░░██──██░░██─────██░░██─────██░░░░░░██─██░░░░░░██─
-─██████████████─██████████████────██████─────────██████████─██████████████████─████████████───██████──██████────██████──────────██████─██████──██████─────██████─────██████████─██████████─
-───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-─██████████████─██████████████─██████──██████─██████████████─██████████────██████████████─██████████─██████████████─██████████─
-─██░░░░░░░░░░██─██░░░░░░░░░░██─██░░██──██░░██─██░░░░░░░░░░██─██░░░░░░██────██░░░░░░░░░░██─██░░░░░░██─██░░░░░░░░░░██─██░░░░░░██─
-─██░░██████████─██░░██████░░██─██░░██──██░░██─██████░░██████─████░░████────██░░██████░░██─████░░████─██░░██████████─████░░████─
-─██░░██─────────██░░██──██░░██─██░░██──██░░██─────██░░██───────██░░██──────██░░██──██░░██───██░░██───██░░██───────────██░░██───
-─██░░██─────────██░░██████░░██─██░░██──██░░██─────██░░██───────██░░██──────██░░██████░░██───██░░██───██░░██───────────██░░██───
-─██░░██─────────██░░░░░░░░░░██─██░░██──██░░██─────██░░██───────██░░██──────██░░░░░░░░░░██───██░░██───██░░██───────────██░░██───
-─██░░██─────────██░░██████░░██─██░░██──██░░██─────██░░██───────██░░██──────██░░██████░░██───██░░██───██░░██───────────██░░██───
-─██░░██─────────██░░██──██░░██─██░░██──██░░██─────██░░██───────██░░██──────██░░██──██░░██───██░░██───██░░██───────────██░░██───
-─██░░██████████─██░░██──██░░██─██░░██████░░██─────██░░██─────████░░████────██░░██──██░░██─████░░████─██░░██████████─████░░████─
-─██░░░░░░░░░░██─██░░██──██░░██─██░░░░░░░░░░██─────██░░██─────██░░░░░░██────██░░██──██░░██─██░░░░░░██─██░░░░░░░░░░██─██░░░░░░██─
-─██████████████─██████──██████─██████████████─────██████─────██████████────██████──██████─██████████─██████████████─██████████─ -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>g3orgecristian</title>
-    <link rel="icon" href="https://g3orgecristian.github.io/assets/media/catelus.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://example.com/favicon.png">
+
     <style>
-        p {
-            background-image: url('https://g3orgecristian.github.io/assets/media/6a3a9aa650f610536f40bedc3e988365.jpg');
-        }
         body {
-            background-color: #121212;
-            color: #ddd;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #abe5a4; /* fundal principal */
+            color: #2E2E2E; /* text închis pentru contrast */
             margin: 0;
-            padding: 20px;
+            padding: 0;
         }
 
-        h1 {
-            color: #ddd;
+        header {
+            background-color: #6cbf84; /* verde mai închis pentru header */
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 4px solid #4a9e6a; /* accent verde închis */
+            border-radius: 0 0 10px 10px;
+            color: #fff;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #ffffff;
+        }
+
+        header p {
+            margin: 0.5rem 0 0 0;
+            color: #e6f0e9;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            gap: 2rem;
+        }
+
+        main {
+            flex: 2;
+        }
+
+        .post {
+            background-color: #ffffff; /* postări albe pentru contrast */
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            color: #2E2E2E;
+        }
+
+        .post h2 {
+            color: #4a9e6a; /* titlurile postărilor în verde închis */
             margin-top: 0;
         }
 
-        p {
-            line-height: 1.6;
+        .post p {
+            margin: 0.5rem 0;
         }
 
-        .iframe-1 {
-            position: absolute;
-            margin-top: 10mm;
-            margin-right: 10mm;
+        .post .date {
+            font-size: 0.9rem;
+            color: #777777;
+        }
+
+        aside.sidebar {
+            flex: 1;
+            background-color: #f0fff4; /* ușor verde deschis */
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+
+        aside.sidebar h3 {
+            color: #4a9e6a;
+            margin-top: 0;
+        }
+
+        aside.sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        aside.sidebar ul li {
+            margin: 0.5rem 0;
+        }
+
+        aside.sidebar ul li a {
+            color: #2E2E2E;
+            text-decoration: none;
+        }
+
+        aside.sidebar ul li a:hover {
+            color: #4a9e6a;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #6cbf84; /* același verde ca header */
+            color: #fff;
+            margin-top: 2rem;
+            border-radius: 10px 10px 0 0;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 1000px) {
+            .container {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
-<header>
-    <a href="https://g3orgecristian.github.io">Home</a>
-</header>
 <body>
 
-    <h1>g3orgecristian</h1>
+    <header>
+        <h1>g3orgecristian</h1>
+        <p>Idei, proiecte și tot ce îmi place să împărtășesc!</p>
+    </header>
 
-    <p>
-        Bine ai venit, momentan website-ul este in constructie!!
-    </p>
+    <div class="container">
+        <main>
+            <div class="post">
+                <h2>Botul de discord UtilityBot</h2>
+                <p class="date">19 Octombrie 2025</p>
+                <p>Am creat un bot numit Utility Bot, care poate modera serverul, da quote-uri și face zaruri. Este scris în Python folosind discord.py.</p>
+                <p>Daca vrei sa aflii mai multe acceseaza linkul de mai jos.</p>
+                <a href="https://g3orgecristian.github.io/utilitybot">https://g3orgecristian.github.io/utilitybot</a>
+            </div>
 
-    <p>
-        Pana atunci uite un <a href="https://g3orgecristian.github.io/assets/media/catelus.jpg">catelus</a>
-    </p>
+            <div class="post">
+                <h2>Despre Mine</h2>
+                <p class="date">18 Octombrie 2025</p>
+                <p>Numele meu este George Cristian si am 19 ani (15.01.2006).</p>
+                <p>Sunt o persoana simpla care ii place sa faca proiecte interesante si sa ma distrez cu ceilalti.</p>
+            </div>
 
-    <p>
-        Assets <a href="https://g3orgecristian.github.io/assets/">click here</a>
-    </p>
-    <iframe class="iframe-1" src="https://discord.com/widget?id=1141121095756419133&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+        </main>
+
+        <aside class="sidebar">
+            <h3>Link-uri utile</h3>
+            <ul>
+                <li><a href="#">Proiecte</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        g3orgecristian.github.io | Discord: g3orgecristian / G3ORGE#6664
+    </footer>
 
 </body>
 </html>
